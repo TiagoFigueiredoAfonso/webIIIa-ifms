@@ -26,13 +26,13 @@ use App\Http\Controllers\IndexController;
 // Route::get('/professor/novo', [ProfessorController::class, 'novo']);
 // Route::post('/professor/salvar', [ProfessorController::class, 'salvar']);
 
-//Route::get('/categoria/lista',[CategoriaController::class, 'lista']);
-//Route::get('/categoria/novo', [CategoriaController::class, 'novo']);
-//Route::post('/categoria/salvar', [CategoriaController::class, 'salvar']);
-//Route::get('/categoria/editar/{id}',[CategoriaController::class, 'editar']);
-//Route::get('/categoria/excluir/{id}',[CategoriaController::class, 'excluir']);
+Route::get('/categoria/lista',[CategoriaController::class, 'lista']);
+Route::get('/categoria/novo', [CategoriaController::class, 'novo']);
+Route::post('/categoria/salvar', [CategoriaController::class, 'salvar']);
+Route::get('/categoria/editar/{id}',[CategoriaController::class, 'editar']);
+Route::get('/categoria/excluir/{id}',[CategoriaController::class, 'excluir']);
 
-//Route::get('/categoria/url', [CategoriaController::class, 'url']);
+Route::get('/categoria/url', [CategoriaController::class, 'url']);
 
 //inicio rota áreas
 Route::get('/area/lista',[AreaController::class, 'lista']);
@@ -55,10 +55,10 @@ Route::get('/', [IndexController::class, 'index']);
 
 // fim rotas empresas
 
-//Route::get('/noticia/lista',[NoticiaController::class, 'lista']);
-//Route::get('/noticia/novo', [NoticiaController::class, 'novo']);
-//Route::post('/noticia/salvar', [NoticiaController::class, 'salvar']);
-//Route::get('/noticia/editar/{id}',[NoticiaController::class, 'editar']);
-//Route::get('/noticia/excluir/{id}',[NoticiaController::class, 'excluir']);
+Route::get('/noticia/lista',[NoticiaController::class, 'lista']);
+Route::get('/noticia/novo', [NoticiaController::class, 'novo']);
+Route::post('/noticia/salvar', [NoticiaController::class, 'salvar']);
+Route::get('/noticia/editar/{id}',[NoticiaController::class, 'editar']);
+Route::get('/noticia/excluir/{id}',[NoticiaController::class, 'excluir']);
 
-//Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index']);

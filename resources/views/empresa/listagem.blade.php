@@ -7,6 +7,7 @@
   <thead>
     <tr class="table-info">
       <th scope="col">Nº</th>
+      <th scope="col">Imagem</th>
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
       <th scope="col">Área de Atuação</th>      
@@ -17,6 +18,11 @@
     @foreach ($empresas as $empresa)
       <tr>
         <td scope='row'>{{$empresa->id}}</td>
+        <td>
+            @if($empresa->imagem != "")
+            <img src="/storage/imagens/{{$empresa->imagem}}" style="width:40px">
+            @endif
+        </td>
         <td>{{$empresa->nome}}</td>        
         <td>{{$empresa->endereco}}</td>
         <td>{{$empresa->area->descricao}}</td>

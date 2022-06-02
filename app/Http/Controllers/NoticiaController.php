@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Noticia;
@@ -25,11 +25,46 @@ class NoticiaController extends Controller
     }
 
     function salvar(Request $request) {
+          $validator = Validator::make($request->all(), [
+            'titulo' => 'required|max:100',
+            'data' => 'required|date',
+            'categoria_id' => 'required|exists:categoria,id',
+            'arquivo' => 'image',
+        ], [
+          'required' => 'O :attribute é requerido.',
+          'image' => 'Não é um arquivo de imagem',
+          'date' => 'Não é uma data válida',
+          'categoria_id.exists'=> 'Não foi encontrado na tabela categoria',
+          'max'=> 'Tamanho máximo de :max'
+        ]);
+
+          if ($validator->fails()) {
+          if ($request->input('id')==0) {
+            return redirect('noticia/novo')
+                    ->withErrors($validator)
+                    ->withInput();
+
+          } else {
+            return redirect()
+                    ->route('noticia/editar', ['id' => $request->input('id')])
+                    ->withErrors($validator)
+                    ->withInput();
+          }
+        }
+
+
       $id = $request->input('id');
       if ($id == 0) {
         $noticia = new Noticia();
       } else {
         $noticia = Noticia::find($id);
+      }
+      $noticia->imagem = $request->input('imagem');
+      if ($request->hasFile('arquivo')) {
+        $path = $request->arquivo->store('public/imagens');
+        $path = explode('/', $path);
+        $len = count($path);
+        $noticia->imagem = $path[$len-1];
       }
       $noticia->titulo = $request->input('titulo');
       $noticia->descricao = $request->input('descricao');

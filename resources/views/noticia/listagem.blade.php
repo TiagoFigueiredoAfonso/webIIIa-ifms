@@ -7,6 +7,7 @@
   <thead>
     <tr >
       <th scope="col">#</th>
+      <th scope="col">Imagem</th>
       <th scope="col">Título</th>
       <th scope="col">Data</th>
       <th scope="col">Autor</th>
@@ -18,6 +19,11 @@
     @foreach ($noticias as $noticia)
       <tr>
         <td scope='row'>{{$noticia->id}}</td>
+        <td>
+              @if($noticia->imagem != "")
+              <img src="/storage/imagens/{{$noticia->imagem}}" style="width:40px">
+              @endif
+        </td>
         <td>{{$noticia->titulo}}</td>
         <td>{{$noticia->data->format('d/m/Y')}}</td>
         <td>{{$noticia->autor}}</td>

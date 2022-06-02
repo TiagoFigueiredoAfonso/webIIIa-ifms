@@ -21,17 +21,22 @@ class CategoriaController extends Controller
     }
 
     function salvar(Request $request) {
-        $id = $request->input('id');
-        if ($id == 0) {
-          $categoria = new Categoria();
-          $categoria->descricao = $request->input('descricao');
-          $categoria->save();
-        } else {
-          $categoria = Categoria::find($id);
-          $categoria->descricao = $request->input('descricao');
-          $categoria->save();
-        }
-        return redirect('categoria/lista');
+      $id = $request->input('id');
+      if ($id == 0) {
+        $categoria = new Categoria();
+      } else {
+        $categoria = Categoria::find($id);
+      }
+      $categoria->imagem = $request->input('imagem');
+      if ($request->hasFile('arquivo')) {
+        $path = $request->arquivo->store('public/imagens');
+        $path = explode('/', $path);
+        $len = count($path);
+        $categoria->imagem = $path[$len-1];
+      }
+      $categoria->descricao = $request->input('descricao');
+      $categoria->save();
+      return redirect('categoria/lista');
     }
 
     function editar($id) {
