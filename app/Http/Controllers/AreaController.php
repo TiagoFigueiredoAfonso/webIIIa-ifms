@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Area;
 
 class AreaController extends Controller
@@ -23,10 +24,9 @@ class AreaController extends Controller
       function salvar(Request $request) {
         $validator = Validator::make($request->all(), [
           'descricao' => 'required|max:100',         
-          'arquivo' => 'image',
+          
       ], [
-        'required' => '*A :attribute é requerida.',
-        'image' => 'Não é um arquivo de imagem',       
+        'required' => '*O :attribute é requerida.',              
         'max'=> 'Tamanho máximo de :max',
       ]);
 

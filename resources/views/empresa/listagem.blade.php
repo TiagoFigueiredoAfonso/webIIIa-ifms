@@ -11,6 +11,8 @@
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
       <th scope="col">Área de Atuação</th>      
+      <th scope="col">Segmento</th>  
+      <th scope="col">Cidade</th>      
       <th scope="col">Editar</th>
     </tr>
   </thead>
@@ -25,7 +27,9 @@
         </td>
         <td>{{$empresa->nome}}</td>        
         <td>{{$empresa->endereco}}</td>
-        <td>{{$empresa->area->descricao}}</td>
+        <td>{{$empresa->area->descricao}}</td>        
+        <td>{{$empresa->segmento->nome}}</td>
+        <td>{{$empresa->cidade->nome}}</td>
         <td>
           <a href='editar/{{$empresa->id}}' class='btn btn-primary'>+</a>
           <a href='excluir/{{$empresa->id}}' class='btn btn-danger'>-</a>

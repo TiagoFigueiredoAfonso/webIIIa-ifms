@@ -6,6 +6,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\CidadeController;
+use App\Http\Controllers\SegmentoController;
 use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,24 @@ Route::get('/noticia/editar/{id}',[NoticiaController::class, 'editar']);
 Route::get('/noticia/excluir/{id}',[NoticiaController::class, 'excluir']);
 
 Route::get('/', [IndexController::class, 'index']);
+
+// rota cidade
+
+Route::get('/cidade/lista',[CidadeController::class, 'lista']);
+Route::get('/cidade/novo', [CidadeController::class, 'novo']);
+Route::post('/cidade/salvar', [CidadeController::class, 'salvar']);
+Route::get('/cidade/editar/{id}',[CidadeController::class, 'editar']);
+Route::get('/cidade/excluir/{id}',[CidadeController::class, 'excluir']);
+
+Route::get('/cidade/url', [CidadeController::class, 'url']);
+
+
+// rota segmento
+
+Route::get('/segmento/lista',[SegmentoController::class, 'lista']);
+Route::get('/segmento/novo', [SegmentoController::class, 'novo']);
+Route::post('/segmento/salvar', [SegmentoController::class, 'salvar']);
+Route::get('/segmento/editar/{id}',[SegmentoController::class, 'editar']);
+Route::get('/segmento/excluir/{id}',[SegmentoController::class, 'excluir']);
+
+Route::get('/segmento/url', [SegmentoController::class, 'url']);

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Empresa;
 use App\Models\Area;
+use App\Models\Segmento;
+use App\Models\Cidade;
 
 class EmpresaController extends Controller
 {
@@ -18,7 +20,9 @@ class EmpresaController extends Controller
         $empresa = new Empresa();
         $empresa->id = 0;        
         $areas = Area::all();
-        return view('empresa.formulario', compact('empresa', 'areas'));
+        $cidades = Cidade::all();
+        $segmentos = Segmento::all();
+        return view('empresa.formulario', compact('empresa', 'areas', 'cidades', 'segmentos'));
       }
   
       function salvar(Request $request) {
@@ -63,6 +67,8 @@ class EmpresaController extends Controller
         $empresa->nome = $request->input('nome');
         $empresa->endereco = $request->input('endereco');        
         $empresa->area_id = $request->input('area_id');
+        $empresa->cidade_id = $request->input('cidade_id');
+        $empresa->segmento_id = $request->input('segmento_id');        
         $empresa->save();
         return redirect('empresa/lista');
       }
@@ -70,7 +76,9 @@ class EmpresaController extends Controller
       function editar($id) {
         $empresa = Empresa::find($id);
         $areas = Area::all();
-        return view('empresa.formulario', compact('empresa', 'areas'));
+        $cidades = Cidade::all();
+        $segmentos = Segmento::all();
+        return view('empresa.formulario', compact('empresa', 'areas', 'cidades', 'segmentos'));
       }
   
       function excluir($id) {

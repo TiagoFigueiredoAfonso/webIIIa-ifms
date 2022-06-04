@@ -28,6 +28,7 @@
         <td>{{$noticia->data->format('d/m/Y')}}</td>
         <td>{{$noticia->autor}}</td>
         <td>{{$noticia->categoria->descricao}}</td>
+        
         <td>
           <a href='editar/{{$noticia->id}}' class='btn btn-primary'>+</a>
           <a href='excluir/{{$noticia->id}}' class='btn btn-danger'>-</a>

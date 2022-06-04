@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
       <label for="descricao">Descrição</label>
-  <input type="text" class="form-control" id="titulo" name="descricao" value="{{old('descricao', $noticia->descricao)}}">
+  <input type="text" class="form-control  @error('descricao') is-invalid @enderror" id="descricao" name="descricao" value="{{old('descricao', $noticia->descricao)}}">
     </div>
     <div class="form-group">
       <label for="data">Data</label>

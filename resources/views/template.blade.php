@@ -38,11 +38,14 @@
         min-height: 75rem;
         padding-top: 4.5rem;
         background:url(https://tributarionosbastidores.com.br/wp-content/uploads/2022/02/empresa-inativa.jpg);
-        background-repeat: no-repeat;
+        
         background-size: 100%;
       }
       h1, h2, #titulo{
         text-align: center;        
+      }
+      form {
+        border: 1px solid black;
       }
     
 
@@ -70,6 +73,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('area/lista')}}">Área</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('segmento/lista')}}">Segmento</a>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('cidade/lista')}}">Cidade</a>
+        </li>
         </li>
       </ul>
     </div>

@@ -1,14 +1,13 @@
 @extends('template')
 
 @section('conteudo')
-
  
-  <form class="container" action="{{url('area/salvar')}}" method="post">
+  <form class="container" action="{{url('cidade/salvar')}}" method="post">
      @csrf
-    <h2>Cadastro de Áreas</h2>
+    <h2>Cadastro de Cidades</h2>
     <div class="form-group">
       <label for="Id">ID</label>
-      <input readonly type="text" class="form-control" id="id" name="id" value="{{$area->id}}">
+      <input readonly type="text" class="form-control" id="id" name="id" value="{{$cidade->id}}">
     </div>
 
     @error('title')
@@ -16,9 +15,9 @@
     @enderror
 
     <div class="form-group">
-      <label for="descricao">Descrição</label>
-      <input type="text" class="form-control @error('descricao') is-invalid @enderror" id="descricao" name="descricao" value="{{$area->descricao}}">
-      @error('descricao')
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{$cidade->nome}}">
+      @error('nome')
             <div class="text-danger">{{ $message }}</div>
         @enderror
     </div>
