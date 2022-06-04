@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{$cidade->nome}}">
+      <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{old('nome', $cidade->nome)}}">
       @error('nome')
             <div class="text-danger">{{ $message }}</div>
         @enderror

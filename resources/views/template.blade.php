@@ -44,8 +44,8 @@
       h1, h2, #titulo{
         text-align: center;        
       }
-      form {
-        border: 1px solid black;
+      .bg-light{
+        border: 1px solid #ccc;
       }
     
 
@@ -61,10 +61,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
+       
+        @auth
+          
+          <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('noticia/lista')}}">Noticia</a>
-        </li>
-        <!--mudar o caminho aqui para empresa e area-->
+        </li>       
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('categoria/lista')}}">Categoria</a>
         </li>
@@ -80,6 +82,19 @@
           <a class="nav-link active" aria-current="page" href="{{url('cidade/lista')}}">Cidade</a>
         </li>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('logout') }}">Sair</a>
+        </li>
+      @else
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('login') }}" >Entrar</a>
+        </li>
+          @if (Route::has('register'))
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ route('register') }}">Registrar</a>
+            </li>
+          @endif
+      @endauth
       </ul>
     </div>
   </div>

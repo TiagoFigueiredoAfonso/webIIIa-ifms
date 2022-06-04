@@ -10,6 +10,11 @@ use App\Models\Cidade;
 
 class CidadeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     function lista() {
         $cidades = DB::table('cidade')->get();
         return view('cidade.listagem',  compact('cidades'),
@@ -23,7 +28,7 @@ class CidadeController extends Controller
       }
       function salvar(Request $request) {
         $validator = Validator::make($request->all(), [
-          'nome' => 'required|max:100',         
+          'nome' => 'required|max:30',         
           
       ], [
         'required' => '*O :attribute é requerido.',              

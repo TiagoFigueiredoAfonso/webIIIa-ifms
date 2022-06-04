@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Area;
 
 class AreaController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     function lista() {
         $areas = DB::table('area')->get();
         return view('area.listagem',  compact('areas'),
@@ -23,7 +28,7 @@ class AreaController extends Controller
   
       function salvar(Request $request) {
         $validator = Validator::make($request->all(), [
-          'descricao' => 'required|max:100',         
+          'descricao' => 'required|max:30',         
           
       ], [
         'required' => '*O :attribute é requerida.',              

@@ -11,6 +11,11 @@ use App\Models\Cidade;
 
 class EmpresaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     function lista() {
         $empresas = Empresa::all();
         return view('empresa.listagem', compact('empresas'));
@@ -27,13 +32,13 @@ class EmpresaController extends Controller
   
       function salvar(Request $request) {
         $validator = Validator::make($request->all(), [
-          'nome' => 'required|max:100',
-          'endereco' => 'required|max:100',
-          
+          'nome' => 'required|max:30',
+          'endereco' => 'required|max:30',      
           'arquivo' => 'image',
+          
       ], [
         'required' => '*O :attribute é requerido.',
-        'image' => 'Não é um arquivo de imagem',       
+        'image' => '*Não é um arquivo de imagem',       
         'max'=> 'Tamanho máximo de :max',
       ]);
 

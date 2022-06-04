@@ -9,6 +9,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\SegmentoController;
 use App\Http\Controllers\IndexController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +21,16 @@ use App\Http\Controllers\IndexController;
 |
 */
 
- Route::get('/', function () {
-     return view('welcome');
- });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Route::get('/professor/lista', [ProfessorController::class, 'lista']);
-// Route::get('/professor/novo', [ProfessorController::class, 'novo']);
-// Route::post('/professor/salvar', [ProfessorController::class, 'salvar']);
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 
 Route::get('/categoria/lista',[CategoriaController::class, 'lista']);
 Route::get('/categoria/novo', [CategoriaController::class, 'novo']);
@@ -63,7 +67,7 @@ Route::post('/noticia/salvar', [NoticiaController::class, 'salvar']);
 Route::get('/noticia/editar/{id}',[NoticiaController::class, 'editar']);
 Route::get('/noticia/excluir/{id}',[NoticiaController::class, 'excluir']);
 
-Route::get('/', [IndexController::class, 'index']);
+
 
 // rota cidade
 

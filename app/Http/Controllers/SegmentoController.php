@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Segmento;
 
 class SegmentoController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     function lista() {
         $segmentos = DB::table('segmento')->get();
         return view('segmento.listagem',  compact('segmentos'),
@@ -22,7 +26,7 @@ class SegmentoController extends Controller
         }
         function salvar(Request $request) {
             $validator = Validator::make($request->all(), [
-                'nome' => 'required|max:100',         
+                'nome' => 'required|max:30',         
                 
             ], [
               'required' => '*O :attribute é requerido.',              

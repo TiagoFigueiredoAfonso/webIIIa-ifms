@@ -26,14 +26,14 @@
 
     <div class="form-group">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{$empresa->nome}}">
+      <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{old('nome', $empresa->nome)}}">
       @error('nome')
             <div class="text-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-group">
       <label for="endereco">Endereço</label>
-  <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{$empresa->endereco}}">
+  <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{old('endereco', $empresa->endereco)}}">
        @error('endereco')
             <div class="text-danger">{{ $message }}</div>
         @enderror
