@@ -8,6 +8,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\SegmentoController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\IndexController;
 
 /*
@@ -90,3 +91,9 @@ Route::get('/segmento/editar/{id}',[SegmentoController::class, 'editar']);
 Route::get('/segmento/excluir/{id}',[SegmentoController::class, 'excluir']);
 
 Route::get('/segmento/url', [SegmentoController::class, 'url']);
+
+Route::get('/usuario/lista',[UsuarioController::class, 'lista']);
+
+Route::get('/usuario/mensagem/{usuario_id}',[UsuarioController::class, 'mensagem']);
+
+Route::post('/usuario/send_mensagem',[UsuarioController::class, 'send_mensagem']);

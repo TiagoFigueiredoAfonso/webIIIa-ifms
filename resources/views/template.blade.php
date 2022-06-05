@@ -78,9 +78,12 @@
         </li>  
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('segmento/lista')}}">Segmento</a>
+        </li>
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('cidade/lista')}}">Cidade</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('usuario/lista')}}">Usuário</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('logout') }}">Sair</a>
