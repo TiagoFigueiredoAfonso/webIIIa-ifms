@@ -62,14 +62,8 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
        
-        @auth
-          
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('noticia/lista')}}">Noticia</a>
-        </li>       
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('categoria/lista')}}">Categoria</a>
-        </li>
+        @auth        
+        
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('empresa/lista')}}">Empresa</a>
         </li>
@@ -85,8 +79,8 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('usuario/lista')}}">Usuário</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('logout') }}">Sair</a>
+        <li class="nav-item ">
+          <a class="nav-link active text text-danger" href="{{ route('logout') }}"> Sair </a>
         </li>
       @else
         <li class="nav-item">

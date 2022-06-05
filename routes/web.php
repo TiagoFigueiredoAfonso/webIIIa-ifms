@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfessorController;
-use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CidadeController;
@@ -32,16 +29,9 @@ use App\Http\Controllers\IndexController;
 
 require __DIR__.'/auth.php';
 
-Route::get('/categoria/relatorio',[CategoriaController::class, 'relatorio']);
-Route::get('/categoria/lista',[CategoriaController::class, 'lista']);
-Route::get('/categoria/novo', [CategoriaController::class, 'novo']);
-Route::post('/categoria/salvar', [CategoriaController::class, 'salvar']);
-Route::get('/categoria/editar/{id}',[CategoriaController::class, 'editar']);
-Route::get('/categoria/excluir/{id}',[CategoriaController::class, 'excluir']);
 
-Route::get('/categoria/url', [CategoriaController::class, 'url']);
 
-//inicio rota áreas
+
 Route::get('/area/lista',[AreaController::class, 'lista']);
 Route::get('/area/novo', [AreaController::class, 'novo']);
 Route::post('/area/salvar', [AreaController::class, 'salvar']);
@@ -49,9 +39,7 @@ Route::get('/area/editar/{id}',[AreaController::class, 'editar']);
 Route::get('/area/excluir/{id}',[AreaController::class, 'excluir']);
 
 Route::get('/area/url', [AreaController::class, 'url']);
-//fim rotas áreas
 
-// inicio rotas empresas
 Route::get('/empresa/relatorio',[EmpresaController::class, 'relatorio']);
 Route::get('/empresa/lista',[EmpresaController::class, 'lista']);
 Route::get('/empresa/novo', [EmpresaController::class, 'novo']);
@@ -61,18 +49,6 @@ Route::get('/empresa/excluir/{id}',[EmpresaController::class, 'excluir']);
 
 Route::get('/', [IndexController::class, 'index']);
 
-// fim rotas empresas
-
-Route::get('/noticia/lista',[NoticiaController::class, 'lista']);
-Route::get('/noticia/novo', [NoticiaController::class, 'novo']);
-Route::post('/noticia/salvar', [NoticiaController::class, 'salvar']);
-Route::get('/noticia/editar/{id}',[NoticiaController::class, 'editar']);
-Route::get('/noticia/excluir/{id}',[NoticiaController::class, 'excluir']);
-
-
-
-// rota cidade
-
 Route::get('/cidade/lista',[CidadeController::class, 'lista']);
 Route::get('/cidade/novo', [CidadeController::class, 'novo']);
 Route::post('/cidade/salvar', [CidadeController::class, 'salvar']);
@@ -80,9 +56,6 @@ Route::get('/cidade/editar/{id}',[CidadeController::class, 'editar']);
 Route::get('/cidade/excluir/{id}',[CidadeController::class, 'excluir']);
 
 Route::get('/cidade/url', [CidadeController::class, 'url']);
-
-
-// rota segmento
 
 Route::get('/segmento/lista',[SegmentoController::class, 'lista']);
 Route::get('/segmento/novo', [SegmentoController::class, 'novo']);
