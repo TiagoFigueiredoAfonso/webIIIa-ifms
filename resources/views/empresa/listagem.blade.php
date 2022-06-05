@@ -10,7 +10,7 @@
       <th scope="col">Imagem</th>
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
-      <th scope="col">Área de Atuação</th>      
+      <th scope="col">Área</th>      
       <th scope="col">Segmento</th>  
       <th scope="col">Cidade</th>      
       <th scope="col">Editar</th>
@@ -39,4 +39,6 @@
   </tbody>
 </table>
 <a href="novo" class="btn btn-outline-primary">Novo</a>
+<a href="relatorio" class="btn btn-outline-primary">Relatório</a>
+
 @endsection

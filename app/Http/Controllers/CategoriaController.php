@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CategoriaController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    function relatorio() {
+      $categorias = Categoria::all();
+      $pdf = PDF::loadView('categoria.relatorio', compact('categorias'));
+      return $pdf->download('categorias.pdf');    
+
+    }
     function lista() {
       $categorias = DB::table('categoria')->get();
       return view('categoria.listagem',  compact('categorias'),

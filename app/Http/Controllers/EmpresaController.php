@@ -8,6 +8,7 @@ use App\Models\Empresa;
 use App\Models\Area;
 use App\Models\Segmento;
 use App\Models\Cidade;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class EmpresaController extends Controller
 {
@@ -15,7 +16,12 @@ class EmpresaController extends Controller
     {
         $this->middleware('auth');
     }
+    function relatorio() {
+      $empresas = Empresa::all();
+      $pdf = PDF::loadView('empresa.relatorio', compact('empresas'));
+      return $pdf->download('empresas.pdf');    
 
+    }
     function lista() {
         $empresas = Empresa::all();
         return view('empresa.listagem', compact('empresas'));

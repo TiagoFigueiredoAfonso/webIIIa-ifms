@@ -31,7 +31,7 @@ use App\Http\Controllers\IndexController;
 
 require __DIR__.'/auth.php';
 
-
+Route::get('/categoria/relatorio',[CategoriaController::class, 'relatorio']);
 Route::get('/categoria/lista',[CategoriaController::class, 'lista']);
 Route::get('/categoria/novo', [CategoriaController::class, 'novo']);
 Route::post('/categoria/salvar', [CategoriaController::class, 'salvar']);
@@ -51,6 +51,7 @@ Route::get('/area/url', [AreaController::class, 'url']);
 //fim rotas áreas
 
 // inicio rotas empresas
+Route::get('/empresa/relatorio',[EmpresaController::class, 'relatorio']);
 Route::get('/empresa/lista',[EmpresaController::class, 'lista']);
 Route::get('/empresa/novo', [EmpresaController::class, 'novo']);
 Route::post('/empresa/salvar', [EmpresaController::class, 'salvar']);
