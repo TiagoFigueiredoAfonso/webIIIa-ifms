@@ -23,7 +23,7 @@ class EmpresaController extends Controller
 
     }
     function lista() {
-        $empresas = Empresa::all();
+        $empresas = Empresa::paginate(3);
         return view('empresa.listagem', compact('empresas'));
       }
   

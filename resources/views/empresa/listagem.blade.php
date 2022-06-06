@@ -38,6 +38,7 @@
     @endforeach
   </tbody>
 </table>
+{{ $empresas->links() }}
 <a href="novo" class="btn btn-outline-primary">Novo</a>
 <a href="relatorio" class="btn btn-outline-primary">Relatório</a>
 

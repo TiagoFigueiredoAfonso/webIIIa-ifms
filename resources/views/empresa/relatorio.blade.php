@@ -29,7 +29,7 @@
                 <th>Imagem</th>
                 <th>Nome</th>
                 <th>Endereço</th>
-                <th>Atuação</th>
+                <th>Área</th>
                 <th>Segmento</th>
                 <th>Cidade</th>
              </tr>
