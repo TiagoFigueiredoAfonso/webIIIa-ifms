@@ -1,6 +1,12 @@
 # webIIIa-ifms
 Trabalho desenvolvido para a matéria de web, no Instituto Federal de Mato Grosso do Sul.
 
+- Login/Cadastro
+- Recuperação de senha
+- 4 formulários(que se relacionam com a tabela empresa).
+- Gerador de PDF
+- Envio de mensagem aos clientes cadastrados no sistema, via e-mail.
+
 <h2 text-align="center">Tela Inicial do Sistema</h2>
 
 ![tela-sistema01 1 (1)](https://user-images.githubusercontent.com/67653921/172158934-8d52d646-6f3f-4ea3-ae3a-3d404a6b5297.png)
