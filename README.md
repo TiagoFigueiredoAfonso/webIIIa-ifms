@@ -5,7 +5,7 @@ Trabalho desenvolvido para a matéria de web, no Instituto Federal de Mato Gross
 - Recuperação de senha
 - 4 formulários(que se relacionam com a tabela empresa).
 - Gerador de PDF
-- Envio de mensagem aos clientes cadastrados no sistema, via e-mail.
+- Envio de mensagem aos usuários cadastrados no sistema, via e-mail.
 
 <h2 text-align="center">Tela Inicial do Sistema</h2>
 
