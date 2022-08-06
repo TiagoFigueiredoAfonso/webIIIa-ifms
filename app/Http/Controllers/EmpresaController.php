@@ -85,6 +85,7 @@ class EmpresaController extends Controller
       }
   
       function editar($id) {
+   
         $empresa = Empresa::find($id);
         $areas = Area::all();
         $cidades = Cidade::all();
